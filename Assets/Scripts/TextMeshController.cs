@@ -1,24 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class TextMeshController : MonoBehaviour {
-	
-	//***************************************************************************//
-	// This simple class will manage and animate 3dtexts ($Money) which are used when a 
-	// customer is happy and is paying the price. 
-	//***************************************************************************//
-
+public class TextMeshController : MonoBehaviour
+{
 	internal Vector3 startingSize;
-
-	//Do not modify this.
-	//this public var is used for other controller to set the amount of money the customer is willing to pay.
 	public string myText;
 
-
-	//***************************************************************************//
-	// Simple Init
-	//***************************************************************************//
-	void Start (){
+	void Start ()
+{
 		//start at the default scale.
 		startingSize = transform.localScale;
 		
@@ -29,14 +18,12 @@ public class TextMeshController : MonoBehaviour {
 		StartCoroutine(scaleUp());
 	}
 
-
-	//***************************************************************************//
 	// Simple animation routine based on scale.
-	//***************************************************************************//
-	IEnumerator scaleUp (){
-
+	IEnumerator scaleUp ()
+{
 		GetComponent<TextMesh>().text = myText;
-		while(transform.localScale.x < 2) {
+		while(transform.localScale.x < 2)
+  {
 			transform.localScale = new Vector3(transform.localScale.x + 0.045f,
 			                                   transform.localScale.y + 0.045f,
 			                                   transform.localScale.z);
@@ -47,7 +34,8 @@ public class TextMeshController : MonoBehaviour {
 		}
 
 		float t = 2;
-		while(t > 0) {
+		while(t > 0)
+  {
 			t -= Time.deltaTime;	
 			transform.position = new Vector3(transform.position.x,
 			                                 transform.position.y + 0.01f,
