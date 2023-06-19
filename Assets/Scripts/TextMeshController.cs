@@ -7,7 +7,7 @@ public class TextMeshController : MonoBehaviour
 	public string myText;
 
 	void Start ()
-{
+ {
 		//start at the default scale.
 		startingSize = transform.localScale;
 		
@@ -20,7 +20,7 @@ public class TextMeshController : MonoBehaviour
 
 	// Simple animation routine based on scale.
 	IEnumerator scaleUp ()
-{
+ {
 		GetComponent<TextMesh>().text = myText;
 		while(transform.localScale.x < 2)
   {
